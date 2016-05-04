@@ -1,7 +1,12 @@
 FROM ubuntu:14.04
 MAINTAINER Daniel Hoherd <hoherd@yelp.com>
 
-COPY setup-puppet-server.sh /
-RUN /setup-puppet-server.sh
-
-# vim: tabstop=4 expandtab fenc=utf-8
+RUN export DEBIAN_FRONTEND=noninteractive \
+&&  apt-get update \
+&&  apt-get purge -y puppet-common \
+&&  apt-get install -y wget rsync \
+&&  wget --no-verbose https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb \
+&&  dpkg -i puppetlabs-release-pc1-trusty.deb \
+&&  apt-get update \
+&&  apt-get install -yq puppetserver puppet-agent puppetdb-termini \
+&&  /etc/init.d/puppetserver start
