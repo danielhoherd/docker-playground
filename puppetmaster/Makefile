@@ -1,14 +1,14 @@
 NO_CACHE ?= true
-NAME ?= znc
+NAME ?= puppet
 
 .PHONY: build
 build:
-	docker build --no-cache=$(NO_CACHE) -t ${USER}/znc .
+	docker build --no-cache=$(NO_CACHE) -t ${USER}/puppet .
 
 .PHONY: run
 run:
-	docker run -d -p 29492:6667 --name $(NAME) -v ${HOME}/.znc:/znc-data ${USER}/znc
+	docker run -d -p 8140:8140 --name $(NAME) ${USER}/puppet
 
 .PHONY: debug
 debug:
-	docker run -it -p 29492:6667 --name $(NAME)-debug -v ${HOME}/.znc:/znc-data ${USER}/znc
+	docker run -it -p 8140:8140 --name $(NAME) ${USER}/puppet
