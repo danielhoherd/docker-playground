@@ -1,6 +1,6 @@
 # Overview
 
-The end goal is to get puppetserver 2.3 running in Docker.
+The end goal is to get a puppet 4 client connected to a puppet 2.3 puppetmaster.
 
 # Notes
 
