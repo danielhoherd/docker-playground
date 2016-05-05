@@ -1,6 +1,6 @@
 # Overview
 
-The end goal is to get a puppet 4 client connected to a puppet 2.3 puppetmaster.
+The end goal is to get a puppet-agent 4 connected to a puppet 2.3 puppetmaster.
 
 # Notes
 
