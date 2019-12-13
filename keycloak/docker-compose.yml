@@ -15,7 +15,7 @@ services:
       POSTGRES_PASSWORD: password
   keycloak:
     # https://hub.docker.com/r/jboss/keycloak
-    image: jboss/keycloak:4.1.0.Final
+    image: jboss/keycloak:8.0.1
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
