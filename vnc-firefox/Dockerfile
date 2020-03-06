@@ -1,12 +1,12 @@
 # Firefox over VNC
 
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 RUN apt update && \
     apt install -y x11vnc xvfb firefox
 
 RUN mkdir ~/.vnc
 RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
 
-RUN bash -c 'echo "firefox" >> ~/.bashrc'
+RUN bash -c 'echo "firefox && pkill -f x11vnc ;" >> ~/.bashrc'
 
-CMD [ '/usr/bin/env', 'x11vnc', '-forever', '-usepw', '-create' ]
+ENTRYPOINT [ "/usr/bin/env", "x11vnc", "-forever", "-usepw", "-create" ]
