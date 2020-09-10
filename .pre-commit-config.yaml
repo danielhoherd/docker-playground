@@ -2,7 +2,7 @@
 exclude: '(venv|.vscode)'  # regex
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.5.0
+    rev: v3.2.0
     hooks:
       - id: check-byte-order-marker
       - id: check-case-conflict
@@ -21,7 +21,7 @@ repos:
       - id: sort-simple-yaml
       - id: trailing-whitespace
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.9
+    rev: 3.8.3
     hooks:
       - id: flake8
   - repo: https://github.com/detailyang/pre-commit-shell
@@ -29,11 +29,11 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/psf/black
-    rev: 19.10b0
+    rev: 20.8b1
     hooks:
       - id: black
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.7
+    rev: v1.1.9
     hooks:
       - id: remove-tabs
         exclude_types: [makefile, binary]
@@ -42,13 +42,14 @@ repos:
     hooks:
       - id: dockerfile_lint
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.20.0
+    rev: v1.24.2
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: d0ec497c80183b0e8b19216154c26a956103a416
+    rev: 07f5a00b0f7d7856d602baf5e530a4d4472d7bf3
     hooks:
       - id: CVE-2017-18342
+      - id: remove-unicode-zero-width-space
       - id: remove-unicode-non-breaking-spaces
       - id: remove-unicode-zero-width-non-breaking-spaces
       - id: remove-en-dashes
